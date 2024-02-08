@@ -1,0 +1,9 @@
+name: MyNPCs
+version: 1.0.0
+
+api: 5.0.0
+main: dungeonlands\mynpc\NPCLoader
+
+permissions:
+  mynpc.admin.all:
+    default: false
