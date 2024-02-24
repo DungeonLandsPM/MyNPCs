@@ -13,36 +13,31 @@ use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\plugin\PluginBase;
 use pocketmine\world\World;
 
-class NPCLoader extends PluginBase
-{
-    public const PREFIX = "§r§cMyNPCs §8» §7";
+class NPCLoader extends PluginBase{
+	public const PREFIX = "§r§cMyNPCs §8» §7";
 
-    protected function onEnable(): void
-    {
-        $this->loadEntities();
+	protected function onEnable() : void{
+		$this->loadEntities();
 
-        $this->registerEvents();
-        $this->registerCommands();
-    }
+		$this->registerEvents();
+		$this->registerCommands();
+	}
 
-    private function registerEvents(): void
-    {
-        $this->getServer()->getPluginManager()->registerEvents(new Events(), $this);
-    }
+	private function registerEvents() : void{
+		$this->getServer()->getPluginManager()->registerEvents(new Events(), $this);
+	}
 
-    private function registerCommands(): void
-    {
-        $this->getServer()->getCommandMap()->register("MyNPC", new npcCommand());
-    }
+	private function registerCommands() : void{
+		$this->getServer()->getCommandMap()->register("MyNPC", new npcCommand());
+	}
 
-    private function loadEntities(): void
-    {
-        EntityFactory::getInstance()->register(FloatingTextEntity::class, function (World $world, CompoundTag $nbt): FloatingTextEntity {
-            return new FloatingTextEntity(EntityDataHelper::parseLocation($nbt, $world), $nbt);
-        }, [FloatingTextEntity::class]);
+	private function loadEntities() : void{
+		EntityFactory::getInstance()->register(FloatingTextEntity::class, function(World $world, CompoundTag $nbt) : FloatingTextEntity{
+			return new FloatingTextEntity(EntityDataHelper::parseLocation($nbt, $world), $nbt);
+		}, [FloatingTextEntity::class]);
 
-        EntityFactory::getInstance()->register(HumanEntity::class, function (World $world, CompoundTag $nbt): HumanEntity {
-            return new HumanEntity(EntityDataHelper::parseLocation($nbt, $world), HumanEntity::parseSkinNBT($nbt), $nbt);
-        }, [HumanEntity::class]);
-    }
+		EntityFactory::getInstance()->register(HumanEntity::class, function(World $world, CompoundTag $nbt) : HumanEntity{
+			return new HumanEntity(EntityDataHelper::parseLocation($nbt, $world), HumanEntity::parseSkinNBT($nbt), $nbt);
+		}, [HumanEntity::class]);
+	}
 }
