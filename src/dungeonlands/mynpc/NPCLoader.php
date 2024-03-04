@@ -14,7 +14,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\world\World;
 
 class NPCLoader extends PluginBase{
-	public const PREFIX = "§r§cMyNPCs §8» §7";
+	public const string PREFIX = "§r§cMyNPCs §8» §7";
 
 	protected function onEnable() : void{
 		$this->loadEntities();

@@ -15,7 +15,7 @@ use pocketmine\plugin\PluginOwnedTrait;
 class npcCommand extends Command{
 	use PluginOwnedTrait;
 
-	private const USAGE_MESSAGE = "§e/npc spawn [text=-1, human=0] [!nameTag] [!command] [!scoreTag]";
+	private const string USAGE_MESSAGE = "§e/npc spawn [text=-1, human=0] [!nameTag] [!command] [!scoreTag]";
 
 	public function __construct(){
 		parent::__construct("npc", NPCLoader::PREFIX . "Manager");

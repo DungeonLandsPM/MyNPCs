@@ -12,9 +12,9 @@ class HumanEntity extends Human{
 	public string $_customScoreTag = "";
 	public string $_command = "";
 
-	private const CUSTOM_NAMETAG = "customNameTag";
-	private const CUSTOM_SCORETAG = "customScoreTag";
-	private const COMMAND = "command";
+	private const string CUSTOM_NAMETAG = "customNameTag";
+	private const string CUSTOM_SCORETAG = "customScoreTag";
+	private const string COMMAND = "command";
 
 	protected function initEntity(CompoundTag $nbt) : void{
 		parent::initEntity($nbt);

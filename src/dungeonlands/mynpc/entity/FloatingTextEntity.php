@@ -16,7 +16,7 @@ use pocketmine\network\mcpe\protocol\types\entity\EntityMetadataProperties;
 class FloatingTextEntity extends Entity{
 	public string $_customNameTag = "";
 
-	private const CUSTOM_NAMETAG = "customNameTag";
+	private const string CUSTOM_NAMETAG = "customNameTag";
 
 	protected function initEntity(CompoundTag $nbt) : void{
 		parent::initEntity($nbt);
