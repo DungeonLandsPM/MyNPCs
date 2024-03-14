@@ -18,7 +18,7 @@ class npcCommand extends Command{
 	private const string USAGE_MESSAGE = "§e/npc spawn [text=-1, human=0] [!nameTag] [!command] [!scoreTag]";
 
 	public function __construct(){
-		parent::__construct("npc", NPCLoader::PREFIX . "Manager");
+		parent::__construct("npc", NPCLoader::PREFIX . "Commands");
 		$this->setPermission("mynpc.admin.all");
 	}
 
